@@ -1,0 +1,141 @@
+.wrapper {
+  box-sizing: border-box;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper_header {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper_title {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+.title {
+  color: #55b2d4;
+  font-size: 13px;
+}
+
+.title_1 {
+  color: black;
+  font-size: 8px;
+  margin-top: 1px;
+  margin-left: 6px;
+}
+
+/* 가판대 스타일 */
+.body__contens__body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.book-list-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.book-row {
+  display: flex;
+  flex-grow: -1;
+  align-items: end;
+  justify-content: space-between;
+  width: 100%;
+  height: 20px;
+  background-color: #55b2e4;
+  z-index: 1; /* 뒤에 위치 */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.book-item {
+  width: 200px;
+  height: 140px;
+  margin: 10px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer; /* 클릭 가능 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  z-index: 2; /* 앞에 위치 */
+}
+
+/* 개별 책 이미지 */
+.book-list-row:nth-of-type(1) .book-item:nth-child(1) {
+  background-image: url("../images/dogsound.jpeg");
+}
+.book-list-row:nth-of-type(1) .book-item:nth-child(2) {
+  background-image: url("../images/chichi.jpeg");
+}
+.book-list-row:nth-of-type(1) .book-item:nth-child(3) {
+  background-image: url("../images/don't-bye.jpeg");
+}
+.book-list-row:nth-of-type(1) .book-item:nth-child(4) {
+  background-image: url("../images/small.jpeg");
+}
+
+.book-list-row:nth-of-type(2) .book-item:nth-child(1) {
+  background-image: url("../images/work.jpeg");
+}
+.book-list-row:nth-of-type(2) .book-item:nth-child(2) {
+  background-image: url("../images/life.jpeg");
+}
+.book-list-row:nth-of-type(2) .book-item:nth-child(3) {
+  background-image: url("../images/wave.jpeg");
+}
+.book-list-row:nth-of-type(2) .book-item:nth-child(4) {
+  background-image: url("../images/write.jpeg");
+}
+
+.book-list-row:nth-of-type(3) .book-item:nth-child(1) {
+  background-image: url("../images/word.jpeg");
+}
+.book-list-row:nth-of-type(3) .book-item:nth-child(2) {
+  background-image: url("../images/tiger.jpeg");
+}
+.book-list-row:nth-of-type(3) .book-item:nth-child(3) {
+  background-image: url("../images/flower.jpeg");
+}
+.book-list-row:nth-of-type(3) .book-item:nth-child(4) {
+  background-image: url("../images/liar.jpeg");
+}
+
+.book-item:hover {
+  transform: scale(1.05); /* 확대 효과 */
+}
+
+/* 모달 스타일 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  display: block;
+  margin: 10% auto;
+  max-width: 500px;
+  height: auto;
+  text-align: center;
+}
+
+.close {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}

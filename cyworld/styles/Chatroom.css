@@ -1,0 +1,154 @@
+/* 기본 스타일 */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.wrapper_header {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.wrapper_title {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.wrapper_title_2 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+.title {
+  color: #55b2d4;
+  font-size: 13px;
+}
+
+.title_1 {
+  color: black;
+  font-size: 8px;
+  margin-top: 1px;
+  margin-left: 6px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 8px;
+  margin: 2px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+input {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  background-color: #55b2d4;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #347d97;
+}
+
+/* 방명록 영역 스타일 */
+#guestbook {
+  margin-top: 20px;
+}
+
+.guestbook-entry {
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.guestbook-entry strong {
+  font-weight: bold;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.guestbook-entry p {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+.guestbook-entry span {
+  color: #888;
+  font-size: 12px;
+}
+
+/* 닉네임 우측 X 텍스트 스타일 */
+.nickname-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nickname-container strong {
+  margin-right: 50px;
+}
+
+.delete-text {
+  font-size: 14px;
+  color: #ff4d4d;
+  cursor: pointer;
+}
+
+.delete-text:hover {
+  color: #ff3333;
+}
+
+/* 입력 필드와 버튼 나열 */
+input,
+textarea,
+button {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+input,
+textarea {
+  width: 90%;
+}
+
+button {
+  width: 95%;
+}
+
+#nickname,
+#message {
+  margin-bottom: 10px;
+}

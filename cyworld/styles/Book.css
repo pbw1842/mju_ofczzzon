@@ -1,0 +1,163 @@
+.wrapper {
+  box-sizing: border-box;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.wrapper_header {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper_title {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+.wrapper_title_2 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+.title {
+  color: #55b2d4;
+  font-size: 13px;
+}
+
+.title_1 {
+  color: black;
+  font-size: 8px;
+  margin-top: 1px;
+  margin-left: 6px;
+}
+
+.albumWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+.img_title {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  justify-content: space-around;
+}
+.Mu_Best {
+  margin-top: 12px;
+  color: #fe893a;
+  font-size: 10px;
+}
+.Mu_header {
+  margin-top: 5px;
+  color: #0f465e;
+  font-size: 12px;
+}
+.Mu_body {
+  color: #999999;
+  font-size: 10px;
+}
+
+table {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  border-top: 2px solid #808080;
+  border-spacing: 0px;
+}
+td {
+  border-bottom: 2px dotted #999999;
+  font-size: 12px;
+}
+.number {
+  text-align: center;
+}
+.table_header {
+  background-color: #dfdede;
+  color: #727272;
+  font-weight: bold;
+}
+.mu_col {
+  color: #0c445c;
+}
+
+.modal {
+  display: none; /* 기본적으로 숨김 */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+  border-radius: 13px;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-radius: 10px;
+}
+
+#modal-title {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold; /* 책 제목을 볼드로 강조 */
+  color: #0f465e;
+  margin-bottom: 10px;
+}
+
+#modal-author {
+  font-size: 14px;
+  color: gray; /* 저자 이름을 gray로 변경 */
+  margin-bottom: 10px;
+}
+
+#modal-score {
+  font-size: 20px;
+  color: rgb(245, 168, 15); /* 저자 이름을 gray로 변경 */
+  margin-bottom: 10px;
+}
+#modal-text {
+  width: 400px;
+  font-size: 14px;
+  color: #0f465e;
+  font-weight: bold; /* 구절을 강조하는 느낌으로 이탤릭체 사용 */
+  margin-top: 20px;
+  border-top: 1px solid #ccc; /* 구절 위에 구분선 추가 */
+  padding-top: 20px; /* 구분선과 간격을 더 넓게 설정 */
+}
+
+.modal-content img {
+  display: block;
+  margin: 0 auto;
+  max-width: 40%; /* 이미지 크기 최대 40%로 설정 */
+  height: auto;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*text-align: center;*/
