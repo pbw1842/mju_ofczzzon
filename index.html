@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <title>박지원의 미니홈피 :: 사이좋은 사람들, 싸이월드</title>
+    <link href="./styles/index.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/c6fe2d1888.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div class="background">
+      <div class="outerbox">
+        <div class="wrapper">
+          <div class="wrapper__left">
+            <div class="wrapper__left__header">
+              <!-- TODAY 0 | TOTAL 12345 -->
+              <div class="today">
+                <sapn>TODAY</sapn>
+                <sapn>6</sapn>
+                <sapn> | TOTAL</sapn>
+                <sapn>917</sapn>
+              </div>
+            </div>
+            <div class="wrapper__left__body">
+              <div class="left__body__header">
+                <div class="left__body__header_gray">
+                  <img src=".../images/profile.jpg" alt="" />
+                </div>
+                <div class="left__body__header_line"></div>
+              </div>
+              <div class="left__body__profile">
+                <i class="fa-sharp fa-regular fa-user"> 책 먹는 øㅕ우 </i>
+                <i class="fa-sharp fa-regular fa-bell"> 010-2494-5616</i>
+                <i class="fa-sharp fa-regular fa-envelope">
+                  pbw1842@naver.com</i
+                >
+                <i class="fa-regular fa-heart">
+                  ભ己Iフト ㅇŀ닌..... □占으로..... 책을 읽는 レHㄱΓ 좋㉰.....</i
+                >
+                <i class="fa-regular fa-heart">
+                  ㅎŁ 권으l 책은 ㅎŁ バr람으l 일생과 같⊂ト.</i
+                >
+                <i class="fa-regular fa-heart">
+                  ㅈΓ신을 향ㅎŁ øㅕ행을 떠ㄴr려면 책을 읽øł○F ㅎŁ⊂ト.</i
+                >
+                <i class="fa-regular fa-heart">
+                  책은 バr람을 口ざ들ヱ, バr람은 책을 통ぁĦ パㅔバ6과
+                  口ざ난⊂ト.</i
+                >
+              </div>
+              <div class="left__body__footer">
+                <p style="font-size: 11px; color: gray; padding-bottom: 10px">
+                  오늘의 기분<br />
+                </p>
+                <div>
+                  <select class="selectBox">
+                    <optgroup label="오늘의 기분">
+                      <option>기쁨 😊</option>
+                      <option>슬픔 😢</option>
+                      <option>지루함 😒</option>
+                      <option>즐거움 🤣</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper__right">
+            <div class="wrapper__right__header">
+              <div class="right__header__title">
+                <b>책 먹는 øㅕ우ㄱr 되ㅈΓ (0ㅅ0)</b>
+              </div>
+              <div class="right__header__setup">welcome to my cyworld!</div>
+            </div>
+            <div class="wrapper__right__body">
+              <iframe id="contentFrame" src="./home.html"></iframe>
+            </div>
+          </div>
+          <div class="navigation">
+            <div class="navigation_item" id="menuHome" onclick="menuHome()">
+              홈
+            </div>
+            <div class="navigation_item" id="menuBook" onclick="menuBook()">
+              올해의 책
+            </div>
+            <div class="navigation_item" id="menusave" onclick="menusave()">
+              보관함
+            </div>
+            <div
+              class="navigation_item"
+              id="menuJukebox"
+              onclick="menuJukebox()"
+            >
+              쥬크박스
+            </div>
+            <div
+              class="navigation_item"
+              id="menuChatroom"
+              onclick="menuChatroom()"
+            >
+              방명록
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

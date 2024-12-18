@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>싸이월드 방명록</title>
+  <link rel="stylesheet" href="styles/Chatroom.css">
+</head>
+<body>
+    <div class="wrapper_header">
+        <div class="wrapper_title">
+          <div class="title">추억을 남ブlヱ ㄱrパㅔ요</div>
+          <div class="title_1">2024 memory</div>
+        </div>
+    </div>
+  
+  <div class="container">
+    <!-- '싸이월드 방명록' 텍스트 삭제 -->
+    <input type="text" id="nickname" placeholder="닉네임 입력">
+    <textarea id="message" rows="3" placeholder="방명록 내용을 입력하세요"></textarea>
+    <button id="submit-btn">등록</button>
+    <div id="guestbook"></div>
+  </div>
+
+</body>
+</html>
+
+    <script>
+     // 댓글 추가 함수
+document.addEventListener("DOMContentLoaded", () => {
+  const nicknameInput = document.getElementById("nickname");
+  const messageInput = document.getElementById("message");
+  const submitBtn = document.getElementById("submit-btn");
+  const guestbook = document.getElementById("guestbook");
+
+  // 방명록 초기화 (localStorage에서 가져오기)
+  loadGuestbook();
+
+  // 등록 버튼 클릭 이벤트
+  submitBtn.addEventListener("click", () => {
+    const nickname = nicknameInput.value.trim();
+    const message = messageInput.value.trim();
+
+    // 입력값 검증
+    if (nickname === "" || message === "") {
+      alert("닉네임과 방명록 내용을 모두 입력해주세요.");
+      return;
+    }
+
+    // 날짜와 시간 가져오기
+    const now = new Date();
+    const date = now.toLocaleDateString("ko-KR");
+    const time = now.toLocaleTimeString("ko-KR");
+
+    // 새 방명록 데이터 생성
+    const entry = {
+      id: Date.now(), // 고유 ID
+      nickname,
+      message,
+      date,
+      time,
+    };
+
+    // localStorage에 저장
+    saveToGuestbook(entry);
+
+    // 방명록 UI 업데이트
+    addGuestbookEntry(entry);
+
+    // 입력 필드 초기화
+    nicknameInput.value = "";
+    messageInput.value = "";
+  });
+
+  // 방명록 항목 삭제 함수
+  function deleteEntry(id) {
+    const guestbookData = getGuestbookData();
+    const updatedData = guestbookData.filter((entry) => entry.id !== id);
+    localStorage.setItem("guestbook", JSON.stringify(updatedData));
+    renderGuestbook(); // 방명록 다시 그리기
+  }
+
+  // 방명록 UI에 항목 추가
+  function addGuestbookEntry(entry) {
+    const guestbookEntry = document.createElement("div");
+    guestbookEntry.classList.add("guestbook-entry");
+    guestbookEntry.innerHTML = `
+      <div class="nickname-container">
+        <strong>${entry.nickname}</strong>
+        <span class="delete-text" data-id="${entry.id}">&times;</span>
+      </div>
+      <p>${entry.message}</p>
+      <span>${entry.date} ${entry.time}</span>
+    `;
+
+    guestbook.appendChild(guestbookEntry); // 방명록 가장 아래에 추가
+
+    // 삭제 버튼에 이벤트 리스너 추가
+    const deleteButton = guestbookEntry.querySelector(".delete-text");
+    deleteButton.addEventListener("click", () => {
+      const id = deleteButton.getAttribute("data-id");
+      deleteEntry(Number(id));
+    });
+  }
+
+  // localStorage에 저장
+  function saveToGuestbook(entry) {
+    const guestbookData = getGuestbookData();
+    guestbookData.push(entry);
+    localStorage.setItem("guestbook", JSON.stringify(guestbookData));
+  }
+
+  // localStorage에서 방명록 데이터 불러오기
+  function getGuestbookData() {
+    const guestbookData = localStorage.getItem("guestbook");
+    return guestbookData ? JSON.parse(guestbookData) : [];
+  }
+
+  // 방명록 불러오기 및 렌더링
+  function loadGuestbook() {
+    const guestbookData = getGuestbookData();
+    guestbookData.forEach((entry) => addGuestbookEntry(entry));
+  }
+
+  // 방명록 다시 그리기
+  function renderGuestbook() {
+    guestbook.innerHTML = ""; // 기존 내용 제거
+    loadGuestbook();
+  }
+});
+
+
+    </script>
+  </body>
+</html>
